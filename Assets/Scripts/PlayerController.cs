@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10;
+    public float speed = 100;
     Rigidbody rbPlayer;
     GameObject focalPoint;
     Renderer rendererPlayer;
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         float forwardInput = Input.GetAxis("Vertical");
         float magnitude = forwardInput * speed * Time.deltaTime;
-        rbPlayer.AddForce(focalPoint.transform.forward * magnitude, ForceMode.Impulse);
+        rbPlayer.AddForce(focalPoint.transform.forward * magnitude, ForceMode.Force);
 
         Debug.Log("Mag:" + magnitude);
         Debug.Log("FI:" + forwardInput);
